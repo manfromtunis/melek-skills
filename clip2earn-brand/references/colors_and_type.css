@@ -1,0 +1,312 @@
+/* ============================================================
+   CLIP2EARN • Colors & Type
+   ------------------------------------------------------------
+   Derived from the production repo (design.json, tailwind.config.js,
+   components/primitives.ts, landing components, HeroUI theme).
+
+   Clip2Earn ships DARK BY DEFAULT. Light tokens are here as well
+   for use inside marketing landing sections and admin surfaces.
+   ============================================================ */
+
+/* ---------- 1. Fonts ----------
+   Loading all three families Clip2Earn ships (Inter, Fira Code,
+   Chakra Petch). Plus Jakarta Sans is loaded as the documented
+   General Sans fallback.                                        */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&family=Chakra+Petch:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* ---------- 2. Color tokens ---------- */
+:root {
+  /* HeroUI scale — BLUE (primary) */
+  --blue-50:  #e6f1fe;  --blue-100: #cce3fd;
+  --blue-200: #99c7fb;  --blue-300: #66aaf9;
+  --blue-400: #338ef7;  --blue-500: #006FEE;
+  --blue-600: #005bc4;  --blue-700: #004493;
+  --blue-800: #002e62;  --blue-900: #001731;
+
+  /* HeroUI scale — GREEN (success) */
+  --green-50:  #e8faf0; --green-100: #d1f4e0;
+  --green-200: #a2e9c1; --green-300: #74dfa2;
+  --green-400: #45d483; --green-500: #17c964;
+  --green-600: #12a150; --green-700: #0e793c;
+  --green-800: #095028; --green-900: #052814;
+
+  /* HeroUI scale — PINK */
+  --pink-50:  #ffedfa;  --pink-100: #ffdcf5;
+  --pink-200: #ffb8eb;  --pink-300: #ff95e1;
+  --pink-400: #ff71d7;  --pink-500: #ff4ecd;
+  --pink-600: #cc3ea4;  --pink-700: #992f7b;
+  --pink-800: #661f52;  --pink-900: #331029;
+
+  /* HeroUI scale — PURPLE (secondary) */
+  --purple-50:  #f2eafa; --purple-100: #e4d4f4;
+  --purple-200: #c9a9e9; --purple-300: #ae7ede;
+  --purple-400: #9353d3; --purple-500: #7828c8;
+  --purple-600: #6020a0; --purple-700: #481878;
+  --purple-800: #301050; --purple-900: #180828;
+
+  /* HeroUI scale — RED (danger, light mode) */
+  --red-50:  #fee7ef;   --red-100: #fdd0df;
+  --red-200: #faa0bf;   --red-300: #f871a0;
+  --red-400: #f54180;   --red-500: #f31260;
+  --red-600: #c20e4d;   --red-700: #920b3a;
+  --red-800: #610726;   --red-900: #310413;
+
+  /* HeroUI scale — YELLOW (warning) */
+  --yellow-50:  #fefce8; --yellow-100: #fdedd3;
+  --yellow-200: #fbdba7; --yellow-300: #f9c97c;
+  --yellow-400: #f7b750; --yellow-500: #f5a524;
+  --yellow-600: #c4841d; --yellow-700: #936316;
+  --yellow-800: #62420e; --yellow-900: #312107;
+
+  /* HeroUI scale — CYAN */
+  --cyan-50:  #F0FCFF;  --cyan-100: #E6FAFE;
+  --cyan-200: #D7F8FE;  --cyan-300: #C3F4FD;
+  --cyan-400: #A5EEFD;  --cyan-500: #7EE7FC;
+  --cyan-600: #06B7DB;  --cyan-700: #09AACD;
+  --cyan-800: #0E8AAA;  --cyan-900: #053B48;
+
+  /* HeroUI scale — ZINC (neutrals) */
+  --zinc-50:  #fafafa;  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;  --zinc-500: #71717a;
+  --zinc-600: #52525b;  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;  --zinc-900: #18181b;
+
+  /* Dark-mode override of danger/warning (from tailwind.config.js). */
+  --danger-dark-500: #ef4444;
+  --danger-dark-400: #f87171;
+  --warning-dark-500: #f59e0b;
+  --warning-dark-400: #fbbf24;
+
+  /* Brand gradients used in the Chakra Petch headlines + primary CTAs. */
+  --gradient-violet:     linear-gradient(180deg, #FF1CF7 0%, #b249f8 100%);
+  --gradient-yellow:     linear-gradient(180deg, #FF705B 0%, #FFB457 100%);
+  --gradient-blue:       linear-gradient(180deg, #5EA2EF 0%, #0072F5 100%);
+  --gradient-cyan:       linear-gradient(180deg, #00b7fa 0%, #01cfea 100%);
+  --gradient-green:      linear-gradient(180deg, #6FEE8D 0%, #17c964 100%);
+  --gradient-pink:       linear-gradient(180deg, #FF72E1 0%, #F54C7A 100%);
+  --gradient-foreground: linear-gradient(180deg, #FFFFFF 0%, #4B4B4B 100%);
+
+  /* Signature brand CTA — violet -> fuchsia. */
+  --brand-gradient: linear-gradient(90deg, #7828c8 0%, #d946ef 100%);
+
+  /* FAQ blue bubble */
+  --bubble-blue: linear-gradient(180deg, #3B82F6 0%, #3F53FF 100%);
+
+  /* Announcement pill red */
+  --accent-red: #E64030;
+}
+
+/* ---------- 3. Semantic tokens — DARK (DEFAULT) ---------- */
+:root,
+:root[data-theme="dark"],
+.dark {
+  --background:   #000000;
+  --foreground:   #ECEDEE;
+  --surface-1:    #0B0B0E;
+  --surface-2:    #0A0A0D;
+  --surface-3:    #18181b;
+  --divider:      rgba(255,255,255,0.15);
+  --border-soft:  rgba(255,255,255,0.10);
+  --overlay:      rgba(0,0,0,0.70);
+
+  --focus:        #006FEE;
+  --primary:      #006FEE;
+  --primary-fg:   #FFFFFF;
+  --secondary:    #9353d3;
+  --secondary-fg: #FFFFFF;
+  --success:      #17c964;
+  --success-fg:   #052814;
+  --warning:      #fbbf24;
+  --warning-fg:   #451a03;
+  --danger:       #f87171;
+  --danger-fg:    #450a0a;
+
+  --text-1:       #FFFFFF;
+  --text-2:       rgba(255,255,255,0.65);
+  --text-3:       #A8A8A8;
+  --text-muted:   rgba(255,255,255,0.50);
+}
+
+/* ---------- 4. Semantic tokens — LIGHT ---------- */
+:root[data-theme="light"],
+.light {
+  --background:   #FFFFFF;
+  --foreground:   #11181C;
+  --surface-1:    #FFFFFF;
+  --surface-2:    #fafafa;
+  --surface-3:    #f4f4f5;
+  --divider:      rgba(17, 17, 17, 0.15);
+  --border-soft:  rgba(17, 17, 17, 0.10);
+  --overlay:      rgba(0,0,0,0.45);
+
+  --focus:        #006FEE;
+  --primary:      #006FEE;
+  --primary-fg:   #FFFFFF;
+  --secondary:    #7828c8;
+  --secondary-fg: #FFFFFF;
+  --success:      #17c964;
+  --success-fg:   #FFFFFF;
+  --warning:      #f5a524;
+  --warning-fg:   #11181C;
+  --danger:       #f31260;
+  --danger-fg:    #FFFFFF;
+
+  --text-1:       #11181C;
+  --text-2:       #52525b;
+  --text-3:       #71717a;
+  --text-muted:   #a1a1aa;
+}
+
+/* ---------- 5. Typography tokens ---------- */
+:root {
+  --font-sans:   "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:   "Fira Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-chakra: "Chakra Petch", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-general-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.3;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-pill: 9999px;
+
+  --sp-0: 0;
+  --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;
+  --sp-4: 16px;  --sp-5: 20px;  --sp-6: 24px;
+  --sp-8: 32px;  --sp-10: 40px; --sp-12: 48px;
+  --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+
+  --shadow-sm:       0 1px 2px rgba(0,0,0,0.08);
+  --shadow-card:     0 10px 30px -12px rgba(0,0,0,0.25);
+  --shadow-card-dk:  0 10px 30px -12px rgba(0,0,0,0.60);
+  --shadow-popover:  0 20px 40px -16px rgba(0,0,0,0.35);
+  --shadow-cta:      0 2px 8px rgba(84,96,233,0.35);
+  --shadow-cta-dk:   0 2px 10px rgba(84,96,233,0.45);
+  --shadow-indigo:   0 6px 16px -8px rgba(99,102,241,0.60);
+  --shadow-bubble:   0 10px 30px -12px rgba(63,83,255,0.55);
+}
+
+/* ---------- 6. Semantic element styles ---------- */
+html, body {
+  font-family: var(--font-sans);
+  color: var(--text-1);
+  background: var(--background);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-chakra);
+  font-weight: var(--fw-bold);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+
+h2, .h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: clamp(var(--text-3xl), 3.5vw, 2.375rem);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+}
+
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--lh-snug);
+  color: var(--text-1);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-base);
+  line-height: var(--lh-snug);
+  color: var(--text-1);
+}
+
+.display {
+  font-family: var(--font-chakra);
+  font-weight: var(--fw-bold);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+  line-height: var(--lh-tight);
+  letter-spacing: -0.025em;
+}
+
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+p, .body {
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+  color: var(--text-2);
+}
+
+.subtitle {
+  font-size: clamp(var(--text-lg), 2vw, var(--text-xl));
+  color: var(--text-2);
+  line-height: var(--lh-relaxed);
+  max-width: 48ch;
+}
+
+.small, small {
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+.tiny { font-size: var(--text-xs); color: var(--text-3); }
+
+code, kbd, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.pill {
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+}

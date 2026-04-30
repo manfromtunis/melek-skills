@@ -15,6 +15,9 @@ Collection of Claude Code skills for productivity, sales, research, and security
 | **Help Center Gaps** | `/help-center-gaps` | Find doc gaps from prospect questions, generate article briefs |
 | **Discord Support Gaps** | `/discord-support-gaps` | Analyze Discord support messages into bugs, features, UX gaps |
 | **Sales Pipeline** | `/sales-pipeline` | Orchestrator — runs all sales skills and compiles a unified weekly report |
+| **Draft Email** | `/draft-email` | Professional email composition with context-gathering checklist |
+| **Create Invoice** | `/create-invoice` | Generate Invoice Ninja invoices via API |
+| **Resolve Obsidian** | `/resolve-obsidian` | Auto-resolve git merge conflicts in an Obsidian vault |
 
 ## Guides
 

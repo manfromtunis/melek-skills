@@ -18,6 +18,7 @@ Collection of Claude Code skills for productivity, sales, research, and security
 | **Draft Email** | `/draft-email` | Professional email composition with context-gathering checklist |
 | **Create Invoice** | `/create-invoice` | Generate Invoice Ninja invoices via API |
 | **Resolve Obsidian** | `/resolve-obsidian` | Auto-resolve git merge conflicts in an Obsidian vault |
+| **Adversarial PR Review** | `/adversarial-pr-review [PR#]` | BMAD adversarial review→fix loop on a GitHub PR until reviewers find nothing actionable; stops & reports (never auto-merges). Ships an optional `gh pr create` auto-trigger hook |
 
 ## Guides
 
@@ -36,6 +37,7 @@ npx skills add manfromtunis/melek-skills
 ```bash
 npx skills add manfromtunis/melek-skills@yt-search
 npx skills add manfromtunis/melek-skills@deep-research
+npx skills add manfromtunis/melek-skills@adversarial-pr-review
 npx skills add manfromtunis/melek-skills@obsidian-gtd-lite
 npx skills add manfromtunis/melek-skills@sales-agents/weekly-deal-review
 npx skills add manfromtunis/melek-skills@sales-agents/sales-deck
@@ -56,6 +58,9 @@ melek-skills/
     skill.md
   deep-research/           # YouTube + NotebookLM research
     skill.md
+  adversarial-pr-review/   # adversarial review->fix loop for GitHub PRs
+    skill.md
+    pr-review-trigger.sh   # optional PostToolUse auto-trigger hook
   sales-agents/            # Sales intelligence suite
     weekly-deal-review/
     sales-deck/

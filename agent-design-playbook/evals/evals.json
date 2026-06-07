@@ -1,0 +1,26 @@
+{
+  "skill_name": "agent-design-playbook",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "refactor-bloated-agent",
+      "prompt": "our customer support agent at work has gotten really bad lately. it started simple but now the system prompt is like 700 lines, we have 18 tools (a few of them call other 'specialist' agents internally), and it keeps doing weird stuff like quoting the wrong refund policy even though the right one is in the prompt. my manager wants a plan to fix it by next sprint. can you write me a concrete refactoring plan?",
+      "expected_output": "A refactoring plan that establishes an eval baseline BEFORE changes, extracts task-conditional prompt content into skills/progressive disclosure, consolidates tools toward primitives, audits subagent communication contracts, and changes one thing at a time (hill climbing). Should diagnose the wrong-refund-policy issue as a context/prompt-conflict problem.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "greenfield-agent-design",
+      "prompt": "I'm building an AI agent for my agency that takes a client's product brief (usually a PDF or a google doc), researches competitors, and drafts ad copy variants in 3 languages. How should I architect this? was thinking one orchestrator + 5 subagents (research, copywriting FR, copywriting EN, copywriting AR, QA)",
+      "expected_output": "Pushes back on premature subagent proliferation (especially per-language copywriting subagents), recommends starting minimal with primitive tools (code execution, file system, web search), a lean system prompt, skills for brand/format guidelines, and defining evals/success criteria before building. Subagents only where context isolation is earned.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "debug-subagent-handoff",
+      "prompt": "weird bug: my orchestrator agent delegates inventory forecasting to a subagent. when i read the subagent's transcript it calculates the forecast correctly (like 847 units) but the final answer the orchestrator gives the user says something different (like 1200 units). model is the latest claude. what's going on and how do i fix it?",
+      "expected_output": "Diagnoses an orchestrator↔subagent communication breakdown (not a model problem): the handoff is lossy/unstructured. Recommends an explicit output contract with enforced structure on the subagent's report, and an eval that compares the orchestrator's final answer against the subagent's findings. May also question whether the subagent is needed at all.",
+      "files": []
+    }
+  ]
+}

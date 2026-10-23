@@ -20,6 +20,7 @@ Collection of Claude Code skills for productivity, sales, research, and security
 | **Resolve Obsidian** | `/resolve-obsidian` | Auto-resolve git merge conflicts in an Obsidian vault |
 | **Adversarial PR Review** | `/adversarial-pr-review [PR#]` | BMAD adversarial review→fix loop on a GitHub PR until reviewers find nothing actionable; stops & reports (never auto-merges). Ships an optional `gh pr create` auto-trigger hook |
 | **Agent Design Playbook** | `/agent-design-playbook` | Agent architecture methodology — tool vs skill vs subagent, lean system prompts, subagent output contracts, eval-driven hill climbing. Benchmarked +32pts vs no skill |
+| **AuraStack Tutorial** | `/aurastack-tutorial <topic>` | Plan and write a French blog tutorial that ranks on Google and gets quoted by AI engines (GEO): keyword + SERP check, question H2s with 40-60 word direct answers, steps, FAQ, sources, anatomy figure; drafts only, never publishes |
 
 ## Guides
 
@@ -40,6 +41,7 @@ npx skills add manfromtunis/melek-skills@yt-search
 npx skills add manfromtunis/melek-skills@deep-research
 npx skills add manfromtunis/melek-skills@adversarial-pr-review
 npx skills add manfromtunis/melek-skills@agent-design-playbook
+npx skills add manfromtunis/melek-skills@aurastack-tutorial
 npx skills add manfromtunis/melek-skills@obsidian-gtd-lite
 npx skills add manfromtunis/melek-skills@sales-agents/weekly-deal-review
 npx skills add manfromtunis/melek-skills@sales-agents/sales-deck
